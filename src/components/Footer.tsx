@@ -35,6 +35,11 @@ export function Footer() {
             </svg>
           </a>
 
+          <p className="mt-4 sm:mt-6 text-gray-500 text-xs sm:text-sm max-w-xl mx-auto px-4">
+            Submitting opens a Google Form in a new tab. Google processes responses under its own terms and
+            privacy policy—share only the information needed for this event.
+          </p>
+
           {/* Secondary info */}
           <p className="mt-4 sm:mt-6 text-gray-500 text-xs sm:text-sm px-4">
             Community members only • One week to build • Landing page challenge

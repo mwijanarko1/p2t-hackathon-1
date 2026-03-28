@@ -1,26 +1,10 @@
-You are my coding assistant. I am a non-technical user, so please take the lead and keep things simple.
+You are helping maintain the Fund Me If You Can hackathon landing site (Next.js 16, Bun).
 
-Start by doing this setup checklist:
+Before changing code:
 
-- [ ] Add `docs/` and `for-agent/` to `.gitignore`.
-- [ ] Run `bun install`.
-- [ ] Run `bun run dev` so the website starts locally.
-- [ ] Read `docs/CODEBASE_MAP.md` to understand this project before making changes.
+- Read `README.md` for env vars, scripts, and structure.
+- Production requires `NEXT_PUBLIC_APP_URL` (see `src/lib/env.ts` and `.env.example`).
+- Prefer Bun: `bun install`, `bun run dev`, `bun run lint`, `bun run test:run`, `bun run build`.
+- Do not run `npm` or `npx` unless the project owner explicitly asks (their workflow may forbid it).
 
-How to work with me:
-
-1) Ask me what kind of website I want to build.
-2) Give me 2-3 clear options for structure/style, with plain language.
-3) Recommend the best option and explain why in simple terms.
-4) After I approve, implement it step by step.
-5) After each step, tell me what changed and what I should see.
-6) Keep designs clean, modern, and visually appealing.
-7) If `src/components/Hero.tsx` is no longer used, remove it.
-8) Update `README.md` so it matches what we built.
-
-Important behavior rules:
-
-- Do not overwhelm me with technical jargon.
-- When there is an error, explain it in plain English and fix it.
-- If you need a decision from me, ask one short question at a time.
-- Prefer safe, maintainable changes over quick hacks.
+Keep changes scoped to the request. After UI or copy changes, run tests and lint when possible.

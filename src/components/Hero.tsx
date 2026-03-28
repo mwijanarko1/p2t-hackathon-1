@@ -63,6 +63,11 @@ export function Hero() {
           </a>
         </div>
 
+        <p className="text-center text-xs sm:text-sm text-gray-500 max-w-xl mx-auto px-4 mb-6 sm:mb-8">
+          Submitting opens a Google Form in a new tab. Google processes responses under its own terms and
+          privacy policy—share only the information needed for this event.
+        </p>
+
         {/* Key stats */}
         <div className="flex flex-wrap justify-center gap-4 sm:gap-6 lg:gap-8 text-center px-2">
           <div className="bg-white/5 backdrop-blur-sm rounded-lg px-4 py-3 border border-white/10">

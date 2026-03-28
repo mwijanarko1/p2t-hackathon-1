@@ -1,6 +1,9 @@
 import type { Metadata, Viewport } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import { getSiteUrl } from "@/lib/env";
 import "./globals.css";
+
+const siteUrl = getSiteUrl();
 
 // Initialize the Geist font with Latin subset
 const geistSans = Geist({
@@ -20,17 +23,20 @@ export const viewport: Viewport = {
 
 // Define metadata for better SEO
 export const metadata: Metadata = {
-  metadataBase: new URL(process.env.NEXT_PUBLIC_APP_URL ?? "http://localhost:3000"),
+  metadataBase: new URL(siteUrl),
   title: "Fund Me If You Can - AI VC Hackathon",
   description: "A beginner-friendly one-week hackathon where you build a startup landing page and convince an AI VC to invest. Compete for the highest investment score.",
   keywords: ["hackathon", "AI", "VC", "startup", "landing page", "beginner", "competition"],
   authors: [{ name: "Pivot2Tech" }],
   creator: "Pivot2Tech",
   publisher: "Pivot2Tech",
+  alternates: {
+    canonical: "/",
+  },
   openGraph: {
     title: "Fund Me If You Can - AI VC Hackathon",
     description: "Build a startup landing page. Convince an AI VC to invest. Get the highest investment score.",
-    url: "https://hackathon.pivot2tech.com",
+    url: siteUrl,
     siteName: "Fund Me If You Can",
     images: [
       {

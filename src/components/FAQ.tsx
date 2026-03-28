@@ -62,38 +62,53 @@ export function FAQ() {
 
         {/* FAQ accordion */}
         <div className="space-y-3 sm:space-y-4">
-          {faqs.map((faq, index) => (
-            <div
-              key={index}
-              className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300"
-            >
-              <button
-                onClick={() => setOpenIndex(openIndex === index ? null : index)}
-                className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-white/5 transition-colors"
-              >
-                <span className="text-sm sm:text-base font-medium text-white pr-3 sm:pr-4">{faq.question}</span>
-                <svg
-                  className={`w-4 sm:w-5 h-4 sm:h-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
-                    openIndex === index ? "rotate-180" : ""
-                  }`}
-                  fill="none"
-                  viewBox="0 0 24 24"
-                  stroke="currentColor"
-                >
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                </svg>
-              </button>
+          {faqs.map((faq, index) => {
+            const isOpen = openIndex === index;
+            const buttonId = `faq-trigger-${index}`;
+            const panelId = `faq-panel-${index}`;
+
+            return (
               <div
-                className={`overflow-hidden transition-all duration-300 ${
-                  openIndex === index ? "max-h-96" : "max-h-0"
-                }`}
+                key={faq.question}
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300"
               >
-                <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-xs sm:text-sm text-gray-400">
-                  {faq.answer}
-                </p>
+                <h3>
+                  <button
+                    id={buttonId}
+                    type="button"
+                    aria-expanded={isOpen}
+                    aria-controls={panelId}
+                    onClick={() => setOpenIndex(isOpen ? null : index)}
+                    className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-white/5 transition-colors"
+                  >
+                    <span className="text-sm sm:text-base font-medium text-white pr-3 sm:pr-4">{faq.question}</span>
+                    <svg
+                      className={`w-4 sm:w-5 h-4 sm:h-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
+                        isOpen ? "rotate-180" : ""
+                      }`}
+                      aria-hidden="true"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                    >
+                      <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                    </svg>
+                  </button>
+                </h3>
+                <div
+                  id={panelId}
+                  role="region"
+                  aria-labelledby={buttonId}
+                  hidden={!isOpen}
+                  className={`overflow-hidden ${isOpen ? "block" : "hidden"}`}
+                >
+                  <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-xs sm:text-sm text-gray-400">
+                    {faq.answer}
+                  </p>
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
       </div>
     </section>

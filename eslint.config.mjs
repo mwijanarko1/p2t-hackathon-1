@@ -1,16 +1,17 @@
-import { dirname } from "path";
-import { fileURLToPath } from "url";
-import { FlatCompat } from "@eslint/eslintrc";
+import { createRequire } from "node:module";
 
-const __filename = fileURLToPath(import.meta.url);
-const __dirname = dirname(__filename);
+const require = createRequire(import.meta.url);
 
-const compat = new FlatCompat({
-  baseDirectory: __dirname,
-});
+/** Flat config from eslint-config-next (avoids FlatCompat circular-config issues). */
+const coreWebVitals = require("eslint-config-next/core-web-vitals");
+const typescript = require("eslint-config-next/typescript");
 
 const eslintConfig = [
-  ...compat.extends("next/core-web-vitals", "next/typescript"),
+  {
+    ignores: ["coverage/**"],
+  },
+  ...coreWebVitals,
+  ...typescript,
 ];
 
 export default eslintConfig;

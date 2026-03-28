@@ -46,12 +46,25 @@ describe("getSiteUrl", () => {
     expect(getSiteUrl()).toBe("https://example.com");
   });
 
-  it("throws in production when NEXT_PUBLIC_APP_URL is missing", async () => {
+  it("falls back to https://example.com in production when URL and VERCEL_URL are missing", async () => {
     vi.stubEnv("NODE_ENV", "production");
     vi.stubEnv("NEXT_PUBLIC_APP_URL", "");
+    vi.stubEnv("VERCEL_URL", "");
+    vi.resetModules();
+    const warn = vi.spyOn(console, "warn").mockImplementation(() => {});
+    const { getSiteUrl } = await import("./env");
+    expect(getSiteUrl()).toBe("https://example.com");
+    expect(warn).toHaveBeenCalled();
+    warn.mockRestore();
+  });
+
+  it("uses VERCEL_URL in production when NEXT_PUBLIC_APP_URL is missing", async () => {
+    vi.stubEnv("NODE_ENV", "production");
+    vi.stubEnv("NEXT_PUBLIC_APP_URL", "");
+    vi.stubEnv("VERCEL_URL", "my-app.vercel.app");
     vi.resetModules();
     const { getSiteUrl } = await import("./env");
-    expect(() => getSiteUrl()).toThrow(/NEXT_PUBLIC_APP_URL is required/);
+    expect(getSiteUrl()).toBe("https://my-app.vercel.app");
   });
 
   it("throws in production when URL is invalid", async () => {

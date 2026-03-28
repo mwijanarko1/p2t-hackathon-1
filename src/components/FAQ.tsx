@@ -3,8 +3,7 @@
 import { useState } from "react";
 
 /**
- * FAQ component
- * Expandable questions and answers
+ * FAQ — cream blueprint section
  */
 export function FAQ() {
   const [openIndex, setOpenIndex] = useState<number | null>(null);
@@ -12,55 +11,60 @@ export function FAQ() {
   const faqs = [
     {
       question: "Do I need to build a full product?",
-      answer: "No! You only need to build a landing page. No backend, no database, no authentication. Just a single page that makes your startup look fundable.",
+      answer:
+        "No! You only need to build a landing page. No backend, no database, no authentication. Just a single page that makes your startup look fundable.",
     },
     {
       question: "Can my startup be completely fake?",
-      answer: "Absolutely. In fact, we encourage creativity. Your startup can be serious, silly, or completely absurd. A dating app for houseplants? Go for it. The AI doesn't know the difference.",
+      answer:
+        "Absolutely. In fact, we encourage creativity. Your startup can be serious, silly, or completely absurd. A dating app for houseplants? Go for it. The AI doesn't know the difference.",
     },
     {
       question: "Can I use AI tools like ChatGPT or GitHub Copilot?",
-      answer: "Yes! AI tools are fully allowed. Use them to write copy, generate ideas, or even help with design. The challenge is about persuasion and presentation, not pure coding.",
+      answer:
+        "Yes! AI tools are fully allowed. Use them to write copy, generate ideas, or even help with design. The challenge is about persuasion and presentation, not pure coding.",
     },
     {
       question: "Can I work in a team?",
-      answer: "Yes, teams are allowed. You can work solo or with others. Just make sure everyone who contributed is registered and listed in your submission.",
+      answer:
+        "Yes, teams are allowed. You can work solo or with others. Just make sure everyone who contributed is registered and listed in your submission.",
     },
     {
       question: "Does my idea have to be serious?",
-      answer: "Not at all. Serious ideas are great, but so are funny ones. Some of the best submissions are creative and entertaining. The goal is to convince the AI VC to invest, however you do it.",
+      answer:
+        "Not at all. Serious ideas are great, but so are funny ones. Some of the best submissions are creative and entertaining. The goal is to convince the AI VC to invest, however you do it.",
     },
     {
       question: "Do I need backend or authentication?",
-      answer: "No backend or authentication required. Your landing page just needs to look convincing and work as a static page. If you want to add these features, you can, but they're not required.",
+      answer:
+        "No backend or authentication required. Your landing page just needs to look convincing and work as a static page. If you want to add these features, you can, but they're not required.",
     },
     {
       question: "Will you reveal the AI judging prompt?",
-      answer: "The exact prompt is kept private to prevent gaming the system. But we've shared the criteria the AI uses: first impression, clarity, visual quality, persuasiveness, credibility, originality, completeness, and overall fundability.",
+      answer:
+        "The exact prompt is kept private to prevent gaming the system. But we've shared the criteria the AI uses: first impression, clarity, visual quality, persuasiveness, credibility, originality, completeness, and overall fundability.",
     },
     {
       question: "What tech stack can I use?",
-      answer: "Anything you want. React, Vue, plain HTML, Figma exports, website builders—it doesn't matter. The only requirement is that your page must be accessible via a public URL.",
+      answer:
+        "Anything you want. React, Vue, plain HTML, Figma exports, website builders—it doesn't matter. The only requirement is that your page must be accessible via a public URL.",
     },
   ];
 
   return (
-    <section className="py-12 sm:py-16 lg:py-24 px-4 sm:px-6 lg:px-10 bg-gradient-to-b from-transparent via-white/5 to-transparent">
-      <div className="max-w-3xl mx-auto">
-        {/* Section header */}
-        <div className="text-center mb-8 sm:mb-12 lg:mb-16">
-          <span className="inline-block text-indigo-400 font-semibold text-sm tracking-wider uppercase mb-3 sm:mb-4">
-            Got Questions?
-          </span>
-          <h2 className="text-2xl sm:text-3xl lg:text-4xl font-bold text-white mb-3 sm:mb-4">
-            FAQ
-          </h2>
-          <p className="text-base sm:text-lg text-gray-400 px-4">
-            Everything you need to know before you start.
-          </p>
+    <section className="relative overflow-hidden bg-[#f0ebe3] py-14 text-neutral-900 sm:py-20 lg:py-28">
+      <div className="pointer-events-none absolute inset-0 neo-grid-ink" aria-hidden />
+      <div className="pointer-events-none absolute bottom-6 right-4 font-mono text-[0.6rem] uppercase tracking-[0.2em] text-neutral-400 sm:right-8">
+        FAQ
+      </div>
+
+      <div className="relative z-10 mx-auto max-w-3xl px-4 sm:px-6 lg:px-10">
+        <div className="mb-12 text-center sm:mb-16">
+          <p className="neo-eyebrow mb-3">Support</p>
+          <h2 className="text-3xl font-bold tracking-tight sm:text-4xl lg:text-5xl">Questions</h2>
+          <p className="mt-4 text-neutral-600">Everything you need to know before you start.</p>
         </div>
 
-        {/* FAQ accordion */}
         <div className="space-y-3 sm:space-y-4">
           {faqs.map((faq, index) => {
             const isOpen = openIndex === index;
@@ -68,10 +72,7 @@ export function FAQ() {
             const panelId = `faq-panel-${index}`;
 
             return (
-              <div
-                key={faq.question}
-                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-lg sm:rounded-xl overflow-hidden transition-all duration-300"
-              >
+              <div key={faq.question} className="neo-card-light overflow-hidden rounded-sm">
                 <h3>
                   <button
                     id={buttonId}
@@ -79,14 +80,14 @@ export function FAQ() {
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="w-full flex items-center justify-between p-4 sm:p-5 text-left hover:bg-white/5 transition-colors"
+                    className="flex w-full items-center justify-between p-4 text-left transition hover:bg-neutral-900/[0.03] sm:p-5"
                   >
-                    <span className="text-sm sm:text-base font-medium text-white pr-3 sm:pr-4">{faq.question}</span>
+                    <span className="pr-4 text-sm font-medium sm:text-base">{faq.question}</span>
                     <svg
-                      className={`w-4 sm:w-5 h-4 sm:h-5 text-gray-400 transition-transform duration-300 flex-shrink-0 ${
+                      className={`h-4 w-4 flex-shrink-0 text-neutral-500 transition-transform duration-300 sm:h-5 sm:w-5 ${
                         isOpen ? "rotate-180" : ""
                       }`}
-                      aria-hidden="true"
+                      aria-hidden
                       fill="none"
                       viewBox="0 0 24 24"
                       stroke="currentColor"
@@ -100,9 +101,9 @@ export function FAQ() {
                   role="region"
                   aria-labelledby={buttonId}
                   hidden={!isOpen}
-                  className={`overflow-hidden ${isOpen ? "block" : "hidden"}`}
+                  className={isOpen ? "block" : "hidden"}
                 >
-                  <p className="px-4 sm:px-5 pb-4 sm:pb-5 text-xs sm:text-sm text-gray-400">
+                  <p className="border-t border-neutral-900/10 px-4 pb-4 pt-3 text-sm text-neutral-600 sm:px-5 sm:pb-5">
                     {faq.answer}
                   </p>
                 </div>

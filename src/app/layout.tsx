@@ -18,7 +18,7 @@ const geistMono = Geist_Mono({
 });
 
 export const viewport: Viewport = {
-  themeColor: "#0f0f1a",
+  themeColor: "#f0ebe3",
 };
 
 // Define metadata for better SEO
@@ -73,7 +73,7 @@ export default function RootLayout({
       >
         <a
           href="#main-content"
-          className="absolute -top-12 left-4 z-50 px-4 py-2 bg-emerald-600 text-white rounded-md transition-[top] duration-200 focus:top-4 focus:outline-none focus:ring-2 focus:ring-emerald-500 focus:ring-offset-2 focus:ring-offset-[#0f0f1a]"
+          className="absolute -top-12 left-4 z-[100] border border-[#b8982e] bg-[#f0ebe3] px-4 py-2 text-neutral-900 transition-[top] duration-200 focus:top-4 focus:outline-none focus:ring-2 focus:ring-[#b8982e] focus:ring-offset-2 focus:ring-offset-[#f0ebe3]"
         >
           Skip to main content
         </a>

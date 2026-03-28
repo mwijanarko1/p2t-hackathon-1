@@ -12,27 +12,19 @@ describe("Hero", () => {
   it("renders the event summary copy", () => {
     render(<Hero />);
     expect(
-      screen.getByText(/A one-week hackathon where your landing page has one job:/i),
+      screen.getByText(/A one-week challenge: one landing page\. One job — make the model invest\./i),
     ).toBeInTheDocument();
-    expect(screen.getByText(/Make the AI invest\./i)).toBeInTheDocument();
+    expect(screen.getByText(/Landing only · No backend required · Public URL/i)).toBeInTheDocument();
   });
 
   it("renders both primary calls to action", () => {
     render(<Hero />);
     expect(
-      screen.getByRole("link", { name: /Submit Your Project/i }),
+      screen.getByRole("link", { name: /Submit your project/i }),
     ).toHaveAttribute("href", "https://forms.gle/B2TWXBt3zaWcEVEG8");
-    expect(screen.getByRole("link", { name: /Learn More/i })).toHaveAttribute(
+    expect(screen.getByRole("link", { name: /How it works/i })).toHaveAttribute(
       "href",
       "#how-it-works",
     );
-  });
-
-  it("discloses Google Form submission and data handling", () => {
-    render(<Hero />);
-    expect(
-      screen.getByText(/Submitting opens a Google Form/i),
-    ).toBeInTheDocument();
-    expect(screen.getByText(/Google processes responses/i)).toBeInTheDocument();
   });
 });

@@ -50,25 +50,43 @@ export function getSiteUrl(): string {
   const raw = normalizeAppUrl(process.env.NEXT_PUBLIC_APP_URL);
 
   if (nodeEnv === "production") {
-    if (!raw) {
-      throw new Error(
-        "NEXT_PUBLIC_APP_URL is required in production. Set it to your deployed origin (e.g. https://example.com).",
-      );
+    if (raw) {
+      const urlCheck = z.string().url().safeParse(raw);
+      if (!urlCheck.success) {
+        throw new Error("NEXT_PUBLIC_APP_URL must be a valid absolute URL in production.");
+      }
+      let host: string;
+      try {
+        host = new URL(raw).hostname;
+      } catch {
+        throw new Error("NEXT_PUBLIC_APP_URL must be a valid absolute URL in production.");
+      }
+      if (isDisallowedProductionHost(host)) {
+        throw new Error("NEXT_PUBLIC_APP_URL must not point to localhost in production.");
+      }
+      return raw;
     }
-    const urlCheck = z.string().url().safeParse(raw);
-    if (!urlCheck.success) {
-      throw new Error("NEXT_PUBLIC_APP_URL must be a valid absolute URL in production.");
+
+    const vercelHost = normalizeAppUrl(process.env.VERCEL_URL);
+    if (vercelHost) {
+      const origin = vercelHost.includes("://") ? vercelHost : `https://${vercelHost}`;
+      const vercelCheck = z.string().url().safeParse(origin);
+      if (vercelCheck.success) {
+        try {
+          const host = new URL(origin).hostname;
+          if (!isDisallowedProductionHost(host)) {
+            return origin.replace(/\/+$/, "");
+          }
+        } catch {
+          /* fall through */
+        }
+      }
     }
-    let host: string;
-    try {
-      host = new URL(raw).hostname;
-    } catch {
-      throw new Error("NEXT_PUBLIC_APP_URL must be a valid absolute URL in production.");
-    }
-    if (isDisallowedProductionHost(host)) {
-      throw new Error("NEXT_PUBLIC_APP_URL must not point to localhost in production.");
-    }
-    return raw;
+
+    console.warn(
+      "[getSiteUrl] NEXT_PUBLIC_APP_URL is unset in production; using https://example.com for metadata during this build. Set NEXT_PUBLIC_APP_URL to your real origin for correct canonical and Open Graph URLs.",
+    );
+    return "https://example.com";
   }
 
   if (raw) {

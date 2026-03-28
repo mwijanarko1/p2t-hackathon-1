@@ -28,6 +28,13 @@ export function Prizes() {
             the AI VC. There is <strong className="font-semibold text-neutral-800">no cash prize</strong> for second or third
             place.
           </p>
+          <p className="mt-4 text-sm leading-relaxed text-neutral-600 sm:text-base">
+            That&apos;s enough to cover roughly one month each at typical subscription rates:{" "}
+            <strong className="font-semibold text-neutral-800">Codex (~£20)</strong>,{" "}
+            <strong className="font-semibold text-neutral-800">Cursor (~£15)</strong>, and{" "}
+            <strong className="font-semibold text-neutral-800">Opencode Go (~£10)</strong> and you&apos;d still have about{" "}
+            <strong className="font-semibold text-neutral-800">£5</strong> left over.
+          </p>
         </div>
       </div>
     </section>

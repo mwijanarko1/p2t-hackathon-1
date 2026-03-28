@@ -46,3 +46,6 @@ next-env.d.ts
 !/docs/CODEBASE_MAP.md
 !/docs/PRD.md
 /for-agent
+
+# Local Netlify folder
+.netlify

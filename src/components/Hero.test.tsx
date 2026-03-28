@@ -12,7 +12,7 @@ describe("Hero", () => {
   it("renders the event summary copy", () => {
     render(<Hero />);
     expect(
-      screen.getByText(/A one-week challenge: one landing page\. One job — make the model invest\./i),
+      screen.getByText(/A one-week challenge: one landing page\. One job: convince the model to invest\./i),
     ).toBeInTheDocument();
     expect(screen.getByText(/Landing only · No backend required · Public URL/i)).toBeInTheDocument();
   });

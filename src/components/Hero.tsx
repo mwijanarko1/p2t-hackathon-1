@@ -19,7 +19,7 @@ export function Hero() {
       </div>
       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-20 px-3 py-3 text-center sm:px-6 sm:py-5">
         <span className="neo-perimeter text-neutral-600">
-          March 29 – April 5, 2026 · NYC-adjacent dev community
+          March 29 – April 5, 2026 · Pivot2Tech
         </span>
       </div>
 
@@ -32,7 +32,7 @@ export function Hero() {
         </h1>
 
         <p className="mx-auto mb-2 max-w-2xl text-base text-neutral-600 sm:text-lg">
-          A one-week challenge: one landing page. One job — make the model invest.
+          A one-week challenge: one landing page. One job: convince the model to invest.
         </p>
         <p className="mx-auto mb-10 max-w-xl font-mono text-xs uppercase tracking-[0.2em] text-[#8a7220] sm:text-sm">
           Landing only · No backend required · Public URL

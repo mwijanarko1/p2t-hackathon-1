@@ -27,7 +27,7 @@ export function FAQ() {
     {
       question: "Can I work in a team?",
       answer:
-        "Yes, teams are allowed. You can work solo or with others. Just make sure everyone who contributed is registered and listed in your submission.",
+        "No. This hackathon is solo only—one person per submission. Teams are not allowed.",
     },
     {
       question: "Does my idea have to be serious?",
@@ -80,7 +80,7 @@ export function FAQ() {
                     aria-expanded={isOpen}
                     aria-controls={panelId}
                     onClick={() => setOpenIndex(isOpen ? null : index)}
-                    className="flex w-full items-center justify-between p-4 text-left transition hover:bg-neutral-900/[0.03] sm:p-5"
+                    className="flex w-full items-center justify-between p-4 text-left transition hover:bg-neutral-900/[0.03] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b8982e] sm:p-5"
                   >
                     <span className="pr-4 text-sm font-medium sm:text-base">{faq.question}</span>
                     <svg

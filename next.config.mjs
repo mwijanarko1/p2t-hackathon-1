@@ -4,6 +4,8 @@ const isDev = process.env.NODE_ENV === "development";
 const nextConfig = {
   reactStrictMode: true,
   async headers() {
+    // Production uses 'unsafe-inline' for scripts (typical Next.js constraint). Tighten with nonces/hashes per
+    // Next.js CSP docs if needed; any new third-party script must be allowlisted here.
     const scriptSrc = isDev
       ? "script-src 'self' 'unsafe-inline' 'unsafe-eval'"
       : "script-src 'self' 'unsafe-inline'";

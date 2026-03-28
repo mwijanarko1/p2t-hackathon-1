@@ -35,7 +35,6 @@ export function Rules() {
       items: [
         "Manipulation is part of the game",
         "But the page must function as a real landing page",
-        "Don't exploit or hack the judging system",
         "Have fun and be creative",
       ],
     },
@@ -58,8 +57,14 @@ export function Rules() {
         <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 sm:gap-6">
           {rules.map((section) => (
             <div key={section.category} className="neo-card-light rounded-sm p-6 sm:p-8">
-              <h3 className="mb-4 flex items-center gap-2 text-base font-semibold sm:text-lg">
-                <svg className="h-5 w-5 text-[#8a7220]" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden>
+              <h3 className="mb-4 flex items-start gap-2 text-base font-semibold leading-snug sm:text-lg">
+                <svg
+                  className="mt-0.5 h-5 w-5 shrink-0 text-[#8a7220]"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  aria-hidden
+                >
                   <path
                     strokeLinecap="round"
                     strokeLinejoin="round"
@@ -67,13 +72,18 @@ export function Rules() {
                     d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"
                   />
                 </svg>
-                {section.category}
+                <span className="min-w-0">{section.category}</span>
               </h3>
-              <ul className="space-y-2">
+              <ul className="space-y-2.5">
                 {section.items.map((item, index) => (
-                  <li key={index} className="flex items-start gap-2 text-sm text-neutral-600 sm:text-base">
-                    <span className="mt-1.5 h-1 w-1 flex-shrink-0 rounded-full bg-[#b8982e]/70" aria-hidden />
-                    {item}
+                  <li key={index} className="flex gap-2 text-sm leading-relaxed text-neutral-600 sm:text-base">
+                    <span
+                      className="flex w-5 shrink-0 justify-center pt-[0.35em]"
+                      aria-hidden
+                    >
+                      <span className="mt-px h-1.5 w-1.5 rounded-full bg-[#b8982e]" />
+                    </span>
+                    <span className="min-w-0 flex-1">{item}</span>
                   </li>
                 ))}
               </ul>

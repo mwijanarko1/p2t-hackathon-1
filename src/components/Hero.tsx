@@ -1,3 +1,6 @@
+import { GoogleFormNotice } from "@/components/GoogleFormNotice";
+import { GOOGLE_FORM_SUBMIT_URL, OPENS_NEW_TAB_A11Y } from "@/lib/submit-form";
+
 /**
  * Hero — cream blueprint grid (matches How It Works)
  */
@@ -38,11 +41,12 @@ export function Hero() {
           Landing only · No backend required · Public URL
         </p>
 
-        <div className="mb-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
+        <div className="mb-4 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center sm:gap-4">
           <a
-            href="https://forms.gle/B2TWXBt3zaWcEVEG8"
+            href={GOOGLE_FORM_SUBMIT_URL}
             target="_blank"
             rel="noopener noreferrer"
+            aria-label={`Submit your project${OPENS_NEW_TAB_A11Y}`}
             className="group inline-flex items-center justify-center gap-2 border border-neutral-900/15 bg-neutral-900 px-6 py-3.5 font-semibold text-[#f0ebe3] transition hover:bg-neutral-800 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b8982e] sm:px-8 sm:py-4"
           >
             <span>Submit your project</span>
@@ -66,6 +70,7 @@ export function Hero() {
             </svg>
           </a>
         </div>
+        <GoogleFormNotice className="mx-auto mb-10 max-w-xl text-xs text-neutral-500 sm:text-sm" />
       </div>
     </section>
   );

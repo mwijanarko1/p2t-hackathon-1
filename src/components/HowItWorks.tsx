@@ -23,7 +23,7 @@ export function HowItWorks() {
       number: "02",
       title: "Build a Landing Page",
       description:
-        "Create a polished landing page for your startup. No backend required. No full app needed. Just a page that sells.",
+        "Create a polished landing page for your startup. No backend required. No full app needed.",
       icon: (
         <svg className="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path
@@ -39,7 +39,7 @@ export function HowItWorks() {
       number: "03",
       title: "Face the AI VC",
       description:
-        "Submit your page. An AI acting as a venture capitalist will evaluate it. Get an investment score. Win bragging rights.",
+        "Submit your page. An AI acting as a venture capitalist will evaluate it. Get an investment score. The highest score wins.",
       icon: (
         <svg className="h-6 w-6 sm:h-8 sm:w-8" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path

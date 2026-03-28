@@ -101,7 +101,15 @@ export function Footer() {
               <span className="font-medium text-neutral-900">Event questions:</span> use your Pivot2Tech community
               channel.
             </p>
-            <p className="mt-3 font-mono text-xs text-neutral-500">A challenge for our community.</p>
+            <p className="mt-3 text-xs text-neutral-500 sm:text-sm">
+              Made by{" "}
+              <a
+                href="https://mikhailwijanarko.xyz"
+                className="font-medium text-[#1e3a5f] underline decoration-[#1e3a5f]/35 underline-offset-2 transition hover:text-[#8a7220] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-[#b8982e] focus-visible:rounded-sm"
+              >
+                @mikhailbuilds
+              </a>
+            </p>
           </div>
         </div>
       </footer>

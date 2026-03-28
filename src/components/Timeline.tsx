@@ -5,39 +5,33 @@
 export function Timeline() {
   const events = [
     {
-      date: "Now Open",
-      title: "Registrations Open",
-      description: "Sign up and get access to resources and starter templates.",
-      status: "active" as const,
-    },
-    {
-      date: "Coming Soon",
-      title: "Kickoff Event",
-      description: "Join us for the official launch. Get tips, meet your cohort, and ask questions.",
+      date: "March 29, 2026",
+      title: "Challenge Kickoff",
+      description: "Hackathon begins. Start building your landing page.",
       status: "upcoming" as const,
     },
     {
-      date: "7 Days",
+      date: "March 29 - April 5",
       title: "Build Week",
-      description: "Create your landing page. Collaborate, iterate, and polish your submission.",
+      description: "7 days to create your landing page. Collaborate, iterate, and polish.",
       status: "upcoming" as const,
     },
     {
-      date: "Deadline TBA",
+      date: "April 5, 2026",
       title: "Submission Deadline",
-      description: "Submit your landing page URL before the cutoff. Late submissions won't be judged.",
+      description: "Submit via Google Form before midnight. Late entries won't be judged.",
       status: "upcoming" as const,
     },
     {
-      date: "TBA",
+      date: "April 6-7",
       title: "AI Judging",
       description: "The AI VC evaluates all submissions and assigns investment scores.",
       status: "upcoming" as const,
     },
     {
-      date: "TBA",
-      title: "Winners Announced",
-      description: "Results revealed. Prizes awarded. Glory achieved.",
+      date: "April 8, 2026",
+      title: "Results Announced",
+      description: "Scores revealed. Winners announced. Bragging rights earned.",
       status: "upcoming" as const,
     },
   ];
@@ -54,7 +48,7 @@ export function Timeline() {
             Timeline
           </h2>
           <p className="text-lg text-gray-400">
-            Key dates you need to know.
+            One week. March 29 to April 5, 2026.
           </p>
         </div>
 
@@ -73,19 +67,13 @@ export function Timeline() {
                 }`}
               >
                 {/* Dot */}
-                <div className={`absolute left-4 sm:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full ${
-                  event.status === "active"
-                    ? "bg-emerald-400 ring-4 ring-emerald-400/20"
-                    : "bg-white/30"
-                }`}></div>
+                <div className="absolute left-4 sm:left-1/2 -translate-x-1/2 w-3 h-3 rounded-full bg-white/30"></div>
 
                 {/* Content */}
                 <div className={`ml-12 sm:ml-0 sm:w-1/2 ${
                   index % 2 === 0 ? "sm:pr-12 sm:text-right" : "sm:pl-12"
                 }`}>
-                  <div className={`bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 transition-all duration-300 hover:bg-white/10 ${
-                    event.status === "active" ? "border-emerald-500/50" : ""
-                  }`}>
+                  <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-5 transition-all duration-300 hover:bg-white/10">
                     <span className="inline-block text-sm font-medium text-emerald-400 mb-2">
                       {event.date}
                     </span>

@@ -11,7 +11,7 @@ import { Footer } from "@/components/Footer";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-gradient-to-b from-[#0f0f1a] via-[#1a1a2e] to-[#0f0f1a]">
+    <main className="min-h-screen bg-gradient-to-b from-[#0f0f1a] via-[#1a1a2e] to-[#0f0f1a]" id="main-content">
       <Hero />
       <HowItWorks />
       <WhyDifferent />

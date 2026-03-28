@@ -6,12 +6,12 @@ export function Footer() {
   return (
     <>
       {/* Final CTA Section */}
-      <section id="register" className="py-24 px-6 sm:px-10">
+      <section id="submit" className="py-24 px-6 sm:px-10">
         <div className="max-w-4xl mx-auto text-center">
           {/* Badge */}
           <div className="inline-flex items-center gap-2 bg-emerald-500/20 border border-emerald-500/30 rounded-full px-4 py-2 mb-8">
             <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-            <span className="text-sm text-emerald-300 font-medium">Registrations Open</span>
+            <span className="text-sm text-emerald-300 font-medium">March 29 - April 5, 2026</span>
           </div>
 
           {/* Headline */}
@@ -19,17 +19,17 @@ export function Footer() {
             Ready to Get Funded?
           </h2>
           <p className="text-xl text-gray-400 mb-8 max-w-2xl mx-auto">
-            Build a landing page. Convince an AI VC. Compete for the highest investment score.
+            Build a landing page. Convince an AI VC. Submit your entry before April 5.
           </p>
 
           {/* CTA Button */}
           <a
-            href="https://forms.gle/example"
+            href="https://forms.gle/B2TWXBt3zaWcEVEG8"
             target="_blank"
             rel="noopener noreferrer"
             className="group inline-flex items-center gap-3 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold text-lg px-10 py-5 rounded-2xl transition-all duration-300 hover:scale-105 hover:shadow-xl hover:shadow-emerald-500/25"
           >
-            <span>Register Now</span>
+            <span>Submit Your Project</span>
             <svg className="w-6 h-6 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
@@ -37,7 +37,7 @@ export function Footer() {
 
           {/* Secondary info */}
           <p className="mt-6 text-gray-500 text-sm">
-            Free to participate • Beginner-friendly • 1 week commitment
+            Community members only • One week to build • Landing page challenge
           </p>
         </div>
       </section>
@@ -59,12 +59,12 @@ export function Footer() {
             {/* Links */}
             <div className="flex items-center gap-6 text-sm text-gray-400">
               <a href="#how-it-works" className="hover:text-white transition-colors">How It Works</a>
-              <a href="#register" className="hover:text-white transition-colors">Register</a>
+              <a href="https://forms.gle/B2TWXBt3zaWcEVEG8" target="_blank" rel="noopener noreferrer" className="hover:text-white transition-colors">Submit</a>
             </div>
 
             {/* Copyright */}
             <p className="text-sm text-gray-500">
-              A hackathon for curious minds.
+              A challenge for our community.
             </p>
           </div>
         </div>

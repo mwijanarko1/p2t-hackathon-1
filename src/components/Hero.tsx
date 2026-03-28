@@ -20,7 +20,7 @@ export function Hero() {
         {/* Event badge */}
         <div className="inline-flex items-center gap-2 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full px-4 py-2 mb-6">
           <span className="w-2 h-2 bg-emerald-400 rounded-full animate-pulse"></span>
-          <span className="text-sm text-gray-300 font-medium">Beginner-friendly • 1 Week Challenge</span>
+          <span className="text-sm text-gray-300 font-medium">Community Challenge • March 29 - April 5</span>
         </div>
 
         {/* Main headline */}
@@ -42,10 +42,12 @@ export function Hero() {
         {/* CTAs */}
         <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mb-12">
           <a
-            href="#register"
+            href="https://forms.gle/B2TWXBt3zaWcEVEG8"
+            target="_blank"
+            rel="noopener noreferrer"
             className="group relative inline-flex items-center gap-2 bg-gradient-to-r from-emerald-500 to-cyan-500 text-white font-semibold px-8 py-4 rounded-xl transition-all duration-300 hover:scale-105 hover:shadow-lg hover:shadow-emerald-500/25"
           >
-            <span>Register Now</span>
+            <span>Submit Your Project</span>
             <svg className="w-5 h-5 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
             </svg>
